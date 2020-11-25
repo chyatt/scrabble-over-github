@@ -1,4 +1,5 @@
 import random
+import utils
 
 # Default list of letter tiles in Scrabble
 tiles = ['A1','A1','A1','A1','A1','A1','A1','A1','A1',
@@ -13,6 +14,6 @@ tiles = ['A1','A1','A1','A1','A1','A1','A1','A1','A1',
 
 # Shuffle tiles and add them to bag.txt for later use
 random.shuffle(tiles)
-with open('bag.txt', 'w') as bag:
-    for tile in tiles:
-        bag.write("{}\n".format(tile))
+# TODO - Fix hard coded filename
+utils.writeBag(tiles,'bag.txt')
+utils.clearLogFile('log.txt')
