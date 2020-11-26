@@ -35,4 +35,4 @@ jobs:
         python-version: ${{ matrix.python-version }}
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: python "print('Hello world from Python')"
+      run: python -c "print('Hello world from Python')"
