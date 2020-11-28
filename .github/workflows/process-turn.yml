@@ -36,6 +36,7 @@ jobs:
       run: |
         output=$(python deal-tiles.py 7)
         echo "::set-output name=tiles::$output"
+      id: step1
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "${{ steps.step1.outputs.tiles}}"
+    #- name: Send greeting
+    #  run: echo "${{ steps.step1.outputs.tiles}}"
