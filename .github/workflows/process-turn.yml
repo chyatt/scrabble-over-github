@@ -33,7 +33,7 @@ jobs:
         python-version: "3.x"
     - name: Deal tiles
       run: |
-        output=$(python deal-tiles.py 7)
+        output=$(python deal-tiles.py $numTiles)
         echo "::set-output name=tiles::$output"
       working-directory: ./
       id: step1
