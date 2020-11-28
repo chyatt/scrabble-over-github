@@ -38,5 +38,5 @@ jobs:
       working-directory: ./
       id: step1
     # Runs a single command using the runners shell
-    #- name: Send greeting
-    #  run: echo "${{ steps.step1.outputs.tiles}}"
+    - name: Print tiles
+      run: echo "${{ steps.step1.outputs.tiles}}"
