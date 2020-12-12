@@ -8,13 +8,18 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+      numTiles:
+        description: 'Number of tiles to deal'
         # Default value if no value is explicitly provided
-        default: 'World'
+        default: '0'
         # Input has to be provided for the workflow to run
         required: true
+      email: 
+        description: 'Email address'
+        required: true
+    outputs:
+      tiles:
+        description: 'The letter tiles that are dealt'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,10 +36,10 @@ jobs:
         python-version: "3.x"
     - name: Deal tiles
       run: |
-        output=$(python deal-tiles.py 7)
+        output=$(python deal-tiles.py 1)
         echo "::set-output name=tiles::$output"
       working-directory: ./
       id: step1
     # Runs a single command using the runners shell
-    #- name: Send greeting
-    #  run: echo "${{ steps.step1.outputs.tiles}}"
+    - name: Print tiles
+      run: echo "${{ steps.step1.outputs.tiles }}"
