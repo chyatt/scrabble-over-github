@@ -39,4 +39,4 @@ jobs:
       id: step1
     # Runs a single command using the runners shell
     - name: Print tiles
-      run: echo "${{ steps.step1.outputs.tiles}}"
+      run: echo "${{steps.step1.outputs.tiles}}"
