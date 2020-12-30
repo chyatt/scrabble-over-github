@@ -1,5 +1,6 @@
 import sys
 import utils
+import os
 
 # TODO - Fix hard coded filename
 with open('bag.txt', 'r') as bag:
