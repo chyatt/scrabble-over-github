@@ -7,7 +7,14 @@ with open('bag.txt', 'r') as bag:
 
 # TODO - Handle command line error checking
 # TODO - Handle empty bag or not enough tiles remaining
-dealtTiles, tiles = tiles[:int(sys.argv[1])], tiles[int(sys.argv[1]):]
+numTiles = os.getenv('INPUT_NUMTILES')
+print('NumTiles: ')
+print(numTiles)
+
+# Note: this no longer works with command line args - needs an 
+# environment variable called INPUT_NUMTILES instead (so it can
+# be used by GitHub Actions)
+dealtTiles, tiles = tiles[:int(numTiles)], tiles[int(numTiles):]
 
 # TODO - Fix hard coded filenames
 utils.writeBag(tiles,'bag.txt')
